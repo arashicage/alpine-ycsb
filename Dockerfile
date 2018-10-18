@@ -9,11 +9,12 @@ RUN apk --update --no-cache add python mksh \
     && eval curl "-Ls https://github.com/brianfrankcooper/YCSB/releases/download/${YCSB_VERSION}/ycsb-${YCSB_VERSION}.tar.gz" \
     | tar -xzvf -
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# COPY start.sh /start.sh
+# RUN chmod +x /start.sh
 
-ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
+# ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
 
-WORKDIR "/opt/ycsb-${YCSB_VERSION}"
+# WORKDIR "/opt/ycsb-${YCSB_VERSION}"
 
-ENTRYPOINT ["/start.sh"]
+# ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/bin/sh"]
